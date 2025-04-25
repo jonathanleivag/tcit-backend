@@ -1,6 +1,11 @@
 import { Request, Response, Router } from 'express'
 import { Post, PostReqBody, Res } from '../type'
-import { createPost, deletePost, getAllPosts } from '../services/post.service'
+import {
+  createPost,
+  deletePost,
+  getAllPosts,
+  getPostById
+} from '../services/post.service'
 
 const router = Router()
 
@@ -8,6 +13,14 @@ router.get('/', async (_req, res: Response<Res<Post[]>>) => {
   const getAll = await getAllPosts()
   res.status(getAll.status).json(getAll)
 })
+
+router.get(
+  '/:id',
+  async (req: Request<{ id: string }>, res: Response<Res<Post>>) => {
+    const getOne = await getPostById(Number(req.params.id))
+    res.status(getOne.status).json(getOne)
+  }
+)
 
 router.post(
   '/',
