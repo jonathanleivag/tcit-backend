@@ -81,6 +81,36 @@ export const createPost = async (post: PostReqBody): Promise<Res<Post>> => {
   }
 }
 
+export const updatePost = async (
+  id: number,
+  post: PostReqBody
+): Promise<Res<Post>> => {
+  try {
+    const data = await prisma.post.update({
+      where: {
+        id
+      },
+      data: {
+        name: post.name,
+        description: post.description
+      }
+    })
+
+    return {
+      message: 'Post updated successfully',
+      success: true,
+      status: 200,
+      data
+    }
+  } catch (error) {
+    return {
+      message: 'Failed to update post',
+      success: false,
+      status: 500
+    }
+  }
+}
+
 export const deletePost = async (id: number): Promise<Res<Post>> => {
   try {
     const data = await prisma.post.delete({
