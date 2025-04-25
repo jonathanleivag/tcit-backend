@@ -3,7 +3,7 @@ import { Post, PostReqBody, Res } from '../type'
 
 const prisma = new PrismaClient()
 
-export const getAll = async (): Promise<Res<Post[]>> => {
+export const getAllPosts = async (): Promise<Res<Post[]>> => {
   try {
     const data = await prisma.post.findMany({
       orderBy: {
@@ -26,7 +26,7 @@ export const getAll = async (): Promise<Res<Post[]>> => {
   }
 }
 
-export const create = async (post: PostReqBody): Promise<Res<Post>> => {
+export const createPost = async (post: PostReqBody): Promise<Res<Post>> => {
   try {
     const data = await prisma.post.create({
       data: {
@@ -44,6 +44,29 @@ export const create = async (post: PostReqBody): Promise<Res<Post>> => {
   } catch (error) {
     return {
       message: 'Failed to create post',
+      success: false,
+      status: 500
+    }
+  }
+}
+
+export const deletePost = async (id: number): Promise<Res<Post>> => {
+  try {
+    const data = await prisma.post.delete({
+      where: {
+        id
+      }
+    })
+
+    return {
+      message: 'Post deleted successfully',
+      success: true,
+      status: 200,
+      data
+    }
+  } catch (error) {
+    return {
+      message: 'Failed to delete post',
       success: false,
       status: 500
     }

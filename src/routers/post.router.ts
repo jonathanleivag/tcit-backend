@@ -1,19 +1,27 @@
 import { Request, Response, Router } from 'express'
 import { Post, PostReqBody, Res } from '../type'
-import { create, getAll } from '../services/post.service'
+import { createPost, deletePost, getAllPosts } from '../services/post.service'
 
 const router = Router()
 
 router.get('/', async (_req, res: Response<Res<Post[]>>) => {
-  const getAllPosts = await getAll()
-  res.status(getAllPosts.status).json(getAllPosts)
+  const getAll = await getAllPosts()
+  res.status(getAll.status).json(getAll)
 })
 
 router.post(
   '/',
   async (req: Request<{}, {}, PostReqBody>, res: Response<Res<Post>>) => {
-    const createPost = await create(req.body)
-    res.status(createPost.status).json(createPost)
+    const create = await createPost(req.body)
+    res.status(create.status).json(create)
+  }
+)
+
+router.delete(
+  '/:id',
+  async (req: Request<{ id: string }>, res: Response<Res<Post>>) => {
+    const remove = await deletePost(Number(req.params.id))
+    res.status(remove.status).json(remove)
   }
 )
 
