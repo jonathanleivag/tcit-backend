@@ -1,11 +1,12 @@
 import { Request, Response, Router } from 'express'
 import { Post, PostReqBody, Res } from '../type'
-import { create } from '../services/post.service'
+import { create, getAll } from '../services/post.service'
 
 const router = Router()
 
-router.get('/', (_req, res: Response) => {
-  res.send('get all posts')
+router.get('/', async (_req, res: Response<Res<Post[]>>) => {
+  const getAllPosts = await getAll()
+  res.status(getAllPosts.status).json(getAllPosts)
 })
 
 router.post(
