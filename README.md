@@ -23,6 +23,9 @@ Este proyecto fue desarrollado con la versión:
 
 ```bash
 Node.js v22.15.0
+```
+
+Se recomienda utilizar [Volta](https://volta.sh) o `nvm` para gestionar versiones de Node.
 
 ## 📁 Estructura del proyecto
 
@@ -46,7 +49,7 @@ Node.js v22.15.0
 ├── tsconfig.json
 └── README.md
 
-````
+```
 
 ## ⚙️ Instalación y configuración
 
@@ -55,7 +58,7 @@ Node.js v22.15.0
 ```bash
 git clone https://github.com/jonathanleivag/tcit-backend.git
 cd tcit-backend
-````
+```
 
 2. Instala las dependencias:
 
