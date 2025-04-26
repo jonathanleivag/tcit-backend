@@ -59,6 +59,20 @@ export const getPostById = async (id: number): Promise<Res<Post>> => {
 
 export const createPost = async (post: PostReqBody): Promise<Res<Post>> => {
   try {
+    const postExists = await prisma.post.findFirst({
+      where: {
+        name: post.name
+      }
+    })
+
+    if (postExists !== null) {
+      return {
+        message: 'Post already exists',
+        success: false,
+        status: 409
+      }
+    }
+
     const data = await prisma.post.create({
       data: {
         name: post.name,
