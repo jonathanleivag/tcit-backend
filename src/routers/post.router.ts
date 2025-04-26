@@ -10,7 +10,7 @@ const router = Router()
  *   get:
  *     tags:
  *       - POST
- *     description: Obtener todos los POST
+ *     description: Obtener todos los posts
  *     responses:
  *       200:
  *         description: Lista de posts
@@ -22,11 +22,37 @@ router.get('/', async (_req, res: Response<Res<Post[]>>) => {
 
 /**
  * @openapi
+ * /api/post/{id}:
+ *   get:
+ *     tags:
+ *       - POST
+ *     description: Obtener un post por ID.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID del post
+ *     responses:
+ *       200:
+ *         description: Post encontrado
+ */
+router.get(
+  '/:id',
+  async (req: Request<{ id: string }>, res: Response<Res<Post>>) => {
+    const getOne = await getPostById(Number(req.params.id))
+    res.status(getOne.status).json(getOne)
+  }
+)
+
+/**
+ * @openapi
  * /api/post:
  *   post:
  *     tags:
  *       - POST
- *     description: Crear un nuevo post
+ *     description: Crear un nuevo post.
  *     requestBody:
  *       required: true
  *       content:
@@ -48,10 +74,45 @@ router.post(
 /**
  * @openapi
  * /api/post/{id}:
+ *   put:
+ *     tags:
+ *       - POST
+ *     description: Actualizar un post existente.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID del post
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/PostReqBody'
+ *     responses:
+ *       200:
+ *         description: Post actualizado correctamente
+ */
+router.put(
+  '/:id',
+  async (
+    req: Request<{ id: string }, {}, PostReqBody>,
+    res: Response<Res<Post>>
+  ) => {
+    const update = await updatePost(Number(req.params.id), req.body)
+    res.status(update.status).json(update)
+  }
+)
+
+/**
+ * @openapi
+ * /api/post/{id}:
  *   delete:
  *     tags:
  *       - POST
- *     description: Eliminar un post por ID
+ *     description: Eliminar un post por ID.
  *     parameters:
  *       - in: path
  *         name: id
