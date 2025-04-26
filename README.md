@@ -91,7 +91,7 @@ SERVER_URL="<your_server_url>"
 
 - `DATABASE_URL`: la URL de conexión a tu base de datos PostgreSQL, ejemplo postgresql://neondb_owner:****************@ep-red-dawn-a40v2ej4-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require.
 - `PORT`: el puerto en el que se ejecutará el servidor de Node.js, recomendación dejarlo 3001.
-- `SERVER_URL`: URL del servidor ejemplo: htt://localhost:3001.
+- `SERVER_URL`: URL del servidor ejemplo: htts://localhost:3001.
 
 ## 🚀 Scripts disponibles
 
