@@ -40,7 +40,7 @@ Este es el backend del Challenge de desarrollo de aplicación en React con backe
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/tcit-backend.git
+git clone https://github.com/jonathanleivag/tcit-backend.git
 cd tcit-backend
 ```
 
