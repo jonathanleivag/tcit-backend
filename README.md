@@ -85,7 +85,7 @@ SERVER_URL="<your_server_url>"
 
 - `DATABASE_URL`: la URL de conexión a tu base de datos PostgreSQL, ejemplo postgresql://neondb_owner:**\*\***\*\*\*\***\*\***@ep-red-dawn-a40v2ej4-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require.
 - `PORT`: el puerto en el que se ejecutará el servidor de Node.js, recomendación dejarlo 3000.
-- `SERVER_URL`: URL del servidor ejemplo: htts://localhost:3001.
+- `SERVER_URL`: URL del servidor ejemplo: http://localhost:3001.
 
 4. Inicializa la base de datos con Prisma:
 
@@ -112,6 +112,10 @@ La documentación Swagger está disponible en:
 ```
 {SERVER_URL}/api-docs
 ```
+
+## Notas importantes
+
+- SERVER_URL es la misma url colocada en la variable de entorno (.env)
 
 La documentación se genera automáticamente usando `swagger-jsdoc` y `swagger-ui-express`.
 
