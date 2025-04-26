@@ -17,27 +17,36 @@ Este es el backend del Challenge de desarrollo de aplicación en React con backe
 - **Prettier** — formateador de código
 - **Swagger** - Documentación del proyecto
 
+## 🧩 Requisitos
+
+Este proyecto fue desarrollado con la versión:
+
+```bash
+Node.js v22.15.0
+
 ## 📁 Estructura del proyecto
 
 ```
+
 .
-├── prisma/              # Esquema y migraciones de Prisma
+├── prisma/ # Esquema y migraciones de Prisma
 ├── src/
-│   ├── generated/       # Código generado automáticamente (e.g. Prisma client)
-│   ├── routers/         # Definición de rutas de la API
-│   ├── services/        # Lógica de negocio y acceso a datos
-│   ├── utils/           # Funciones utilitarias
-│   ├── enum.ts          # Enumeraciones compartidas
-│   ├── index.ts         # Punto de entrada principal de la app
-│   └── type.d.ts        # Tipados globales
-├── .env.example         # Variables de entorno de ejemplo
-├── .gitignore           # Archivos ignorados del git
-├── .nvmrc               # Version de node
-├── .prettierrc          # Configuración de formateador de código
+│ ├── generated/ # Código generado automáticamente (e.g. Prisma client)
+│ ├── routers/ # Definición de rutas de la API
+│ ├── services/ # Lógica de negocio y acceso a datos
+│ ├── utils/ # Funciones utilitarias
+│ ├── enum.ts # Enumeraciones compartidas
+│ ├── index.ts # Punto de entrada principal de la app
+│ └── type.d.ts # Tipados globales
+├── .env.example # Variables de entorno de ejemplo
+├── .gitignore # Archivos ignorados del git
+├── .nvmrc # Version de node
+├── .prettierrc # Configuración de formateador de código
 ├── package.json
 ├── tsconfig.json
 └── README.md
-```
+
+````
 
 ## ⚙️ Instalación y configuración
 
@@ -46,7 +55,7 @@ Este es el backend del Challenge de desarrollo de aplicación en React con backe
 ```bash
 git clone https://github.com/jonathanleivag/tcit-backend.git
 cd tcit-backend
-```
+````
 
 2. Instala las dependencias:
 
