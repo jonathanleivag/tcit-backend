@@ -16,7 +16,7 @@ const router = Router()
  *   get:
  *     tags:
  *       - POST
- *     description: Obtener todos los POST
+ *     description: Obtener todos los posts
  *     responses:
  *       200:
  *         description: Lista de posts
@@ -32,7 +32,7 @@ router.get('/', async (_req, res: Response<Res<Post[]>>) => {
  *   get:
  *     tags:
  *       - POST
- *     description: Obtener un post por ID
+ *     description: Obtener un post por ID.
  *     parameters:
  *       - in: path
  *         name: id
@@ -58,7 +58,7 @@ router.get(
  *   post:
  *     tags:
  *       - POST
- *     description: Crear un nuevo post
+ *     description: Crear un nuevo post.
  *     requestBody:
  *       required: true
  *       content:
@@ -83,7 +83,7 @@ router.post(
  *   put:
  *     tags:
  *       - POST
- *     description: Actualizar un post existente
+ *     description: Actualizar un post existente.
  *     parameters:
  *       - in: path
  *         name: id
@@ -118,7 +118,7 @@ router.put(
  *   delete:
  *     tags:
  *       - POST
- *     description: Eliminar un post por ID
+ *     description: Eliminar un post por ID.
  *     parameters:
  *       - in: path
  *         name: id
