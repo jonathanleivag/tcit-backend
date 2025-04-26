@@ -70,11 +70,11 @@ npm i
 cp .env.example .env
 ```
 
-## 📄 Variables de entorno
+#### 📄 Variables de entorno
 
 Debes crear un archivo `.env` en la raíz del proyecto. Puedes usar `.env.example` como plantilla.
 
-### Variables necesarias:
+##### Variables necesarias:
 
 ```env
 DATABASE_URL="<your_database_url>"
@@ -83,8 +83,8 @@ SERVER_URL="<your_server_url>"
 
 ```
 
-- `DATABASE_URL`: la URL de conexión a tu base de datos PostgreSQL, ejemplo postgresql://neondb_owner:****************@ep-red-dawn-a40v2ej4-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require.
-- `PORT`: el puerto en el que se ejecutará el servidor de Node.js, recomendación dejarlo 3001.
+- `DATABASE_URL`: la URL de conexión a tu base de datos PostgreSQL, ejemplo postgresql://neondb_owner:**\*\***\*\*\*\***\*\***@ep-red-dawn-a40v2ej4-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require.
+- `PORT`: el puerto en el que se ejecutará el servidor de Node.js, recomendación dejarlo 3000.
 - `SERVER_URL`: URL del servidor ejemplo: htts://localhost:3001.
 
 4. Inicializa la base de datos con Prisma:
@@ -98,7 +98,6 @@ npx prisma migrate dev --name TCIT
 ```bash
 npm run dev
 ```
-
 
 ## 🚀 Scripts disponibles
 
