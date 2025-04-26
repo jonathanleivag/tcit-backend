@@ -11,7 +11,7 @@ Este es el backend del Challenge de desarrollo de aplicación en React con backe
 - **Prisma** — ORM moderno y tipado
 - **Dotenv** — gestión de variables de entorno
 - **Prettier** — formateador de código
-- **swagger** - Documentación del proyecto
+- **Swagger** - Documentación del proyecto
 
 ## 📁 Estructura del proyecto
 
