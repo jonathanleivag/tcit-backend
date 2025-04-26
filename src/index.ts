@@ -4,10 +4,11 @@ import { ENV } from './enum'
 import PostRouter from './routers/post.router'
 import helmet from 'helmet'
 import cors from 'cors'
+import { setupSwagger } from './utils/swagger.util'
 
 const app = express()
 const port = getEnv(ENV.PORT)
-
+setupSwagger(app)
 app.use(express.json())
 app.use(helmet())
 app.use(cors())

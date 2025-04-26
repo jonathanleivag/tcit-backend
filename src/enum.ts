@@ -1,3 +1,4 @@
 export enum ENV {
-  PORT = 'PORT'
+  PORT = 'PORT',
+  SERVER_URL = 'SERVER_URL'
 }
