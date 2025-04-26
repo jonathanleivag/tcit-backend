@@ -11,6 +11,7 @@ Este es el backend del Challenge de desarrollo de aplicación en React con backe
 - **Prisma** — ORM moderno y tipado
 - **Dotenv** — gestión de variables de entorno
 - **Prettier** — formateador de código
+- **swagger** - Documentación del proyecto
 
 ## 📁 Estructura del proyecto
 
@@ -70,10 +71,13 @@ Debes crear un archivo `.env` en la raíz del proyecto. Puedes usar `.env.exampl
 ```env
 DATABASE_URL="<your_database_url>"
 PORT="<your_port>"
+SERVER_URL="<your_server_url>"
+
 ```
 
 - `DATABASE_URL`: la URL de conexión a tu base de datos PostgreSQL.
 - `PORT`: el puerto en el que se ejecutará el servidor, recomendación dejarlo 3001.
+- `SERVER_URL`: URL del servidor.
 
 ## 🚀 Scripts disponibles
 
@@ -83,6 +87,12 @@ PORT="<your_port>"
 
 ## 🧪 Endpoints y documentación
 
-Por ahora no se incluye documentación Swagger, pero puedes agregarla con `swagger-jsdoc` y `swagger-ui-express`.
+La documentación Swagger está disponible en:
+
+```
+{SERVER_URL}/api-docs
+```
+
+La documentación se genera automáticamente usando `swagger-jsdoc` y `swagger-ui-express`.
 
 ---
