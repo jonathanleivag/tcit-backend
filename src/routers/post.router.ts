@@ -1,12 +1,6 @@
 import { Request, Response, Router } from 'express'
 import { Post, PostReqBody, Res } from '../type'
-import {
-  createPost,
-  deletePost,
-  getAllPosts,
-  getPostById,
-  updatePost
-} from '../services/post.service'
+import { createPost, deletePost, getAllPosts } from '../services/post.service'
 
 const router = Router()
 

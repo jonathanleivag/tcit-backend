@@ -57,6 +57,7 @@ export const getPostById = async (id: number): Promise<Res<Post>> => {
   }
 }
 
+
 export const createPost = async (post: PostReqBody): Promise<Res<Post>> => {
   try {
     const postExists = await prisma.post.findFirst({
@@ -94,6 +95,7 @@ export const createPost = async (post: PostReqBody): Promise<Res<Post>> => {
     }
   }
 }
+
 
 export const updatePost = async (
   id: number,
