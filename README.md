@@ -1,10 +1,8 @@
-# Backend - Proyecto TCIT
+# TCIT - Backend
 
 <p align="center">
   <img src="./logo.webp" alt="Logo TCIT" width="300"/>
 </p>
-
-Este es el backend del Challenge de desarrollo de aplicación en React con backend en Ruby on Rails o NodeJS, Base de datos SQL **TCIT**, desarrollado con Node.js, TypeScript, Express y PostgreSQL utilizando Prisma ORM.
 
 ## 🧰 Tecnologías principales
 
@@ -25,7 +23,7 @@ Este proyecto fue desarrollado con la versión:
 Node.js v22.15.0
 ```
 
-Se recomienda utilizar [Volta](https://volta.sh) o `nvm` para gestionar versiones de Node.
+Se recomienda utilizar [Volta](https://volta.sh) o [nvm](https://github.com/nvm-sh/nvm) para gestionar versiones de Node.
 
 ## 📁 Estructura del proyecto
 
